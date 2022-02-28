@@ -1,0 +1,133 @@
+% Created 2022-02-28 Mon 14:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Fanping}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Fanping},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.5.1)},
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Lecture Note 17}
+\label{sec:orgfa5b31e}
+\subsection{how to classify groups with semi-directed products}
+\label{sec:orgf735c4d}
+\subsubsection{Warm up exercise: \(|G| = 6\)}
+\label{sec:orgcf3e942}
+Say \(G_{13}\) of size \(6\). Let \(N \lhd G, |N| = 3\)
+Let \(H\) be a group, \(|H| = 2, H \subset G\).
+Notice \(H \cap N = \{e\}\).
+So \(G = NH\).
+
+What is \(Aut<N>\)? automorphism group. \(N \cong C_3\).
+\(Aut<N> \cong\)
+
+TODO
+
+There are 2 homomorphisms \(\phi: H \to Aut<N>\), \(x \to id_N\), these are \(\phi_1\).
+and the other one \(\phi_2\)
+
+\(C_3 \times_{\phi_1} C_2\), muliplication in this exmaple is
+\(<n_1, h_1> <n_2, h_2> = n_1 \phi_1(h_1, n_2) h_1h_2 = n_1n_2 \cdot h_1h_2\)
+ie \(C_3 \times C_2\) or \(C_6\)
+
+\(C_3 \times_{\phi_2} C_2 \cong S_3\)
+\subsubsection{Classify all groups \(|G| = 12\)}
+\label{sec:org23aa595}
+\(12 = 2^2 \cdot 3\), so we have 2-Sylow subgroup of size \(4\) and a 3-Sylow
+subgroup of size \(3\).
+\begin{enumerate}
+\item Example
+\label{sec:orgbd7fa42}
+\(C_12 \cong C_4 \times C_3\), \(C_2 \times C_2 \times C_3\),
+\(A_4\)
+Dihearal group of with \(12\) elements \(\to D_6\).
+
+What about \(S_3 \times C_2\)? Is it actually \(S_3 \times C_2 \cong D6\)?
+
+There are \(3\) non-isomorphic non-abelian group of order \(12\)
+but the missing one is called the dicyclic group of order \(12\).
+
+\(G\) of size \(12\) and \(n_3 \equiv 1\ mod\ 3\) and \(n_3 | 4\).
+so either \(n_3 = 1\) or \(4\). If \(n_3 = 1\) then the 3-Sylow subgroup is
+normal otherwise we have \(n_3 = 4\).
+
+If we have \(4\) 3-Sylow subgroups, then \(8\) elements of G have order \(3\)
+and we also have the identity \(60\) this only allows \(3\) other elements so
+\(n_2 = 1\). In this case the 2-Sylow subgroups is normal.
+
+\begin{itemize}
+\item Case 1
+Let \(n_2 = 1\) with 2-Sylow subgroup \(N\) and some 3-Sylow subgroup \(H\).
+\(N \cap H = \{e\}\) and \(G = NH\). So \(G\) is a semi-direct product. (Hint: We
+only get 1 non-abelian up to isomorphism.)
+
+\item Case 2
+\(n_3 = 1\) so we have normal 3-Sylow subgroup \(N\) and some 2-Sylow
+subgroup \(H\). Again \(G = NH\) and \(G\) is a semi-direct product. There are \(2\)
+non-abelian examples here up to isomorphism.
+\end{itemize}
+
+Notice if \(G \cong N \times H\) then \(G\) is abelian.
+\end{enumerate}
+
+\subsection{Part 2 of Math 4GR3: Rings and Fields}
+\label{sec:org9cce1d2}
+\subsubsection{What is a Ring?}
+\label{sec:orgb988ce3}
+A set \(R\) with \(2\) binary operations \(+\) and \(\cdot\) is called a ring if
+\begin{itemize}
+\item \((R, +)\) is an abelian group.
+Usually write \(0\) for the identity
+
+\item \(\cdot\) is associative
+\(x \cdot(y \cdot z) = (x \cdot y) \cdot z \forall x,y,z \in R\)
+
+If there is a unit, we usually write it as \(1\), i.e.
+\(1 \cdot x = x \cdot 1 = x \forall x \in R\).
+
+\item Distributivity
+\(x \cdot (y + z) = x \cdot y + x \cdot z\) (left-distributivity)
+\((y + z) \cdot x = y \cdot x + z \cdot x\) (right-distributivity)
+\(\forall x,y,z \in R\).
+\end{itemize}
+
+\begin{enumerate}
+\item Example
+\label{sec:org762815e}
+\begin{itemize}
+\item \(Z\) iwth usual \(+\) and \(\cdot\) is a ring
+\item \(\mathbb{Q}, \mathbb{R}, \mathbb{C}\) with usual \(+\) and \(\cdot\) are rings.
+In fact, every non-zero element has a multiplicative inverse, so there are fields.
+(Multiplication is commutative as well).
+\item If we have multiplicative inverse but not commutative TODO
+\item Polynomial rings: \(\mathbb{Z}\{x\}, \mathbb{R}\{x\}, \mathbb{C}\{x\}\)
+with usual \(+\) and \(\cdot\)
+\item Non-commutative example of a ring:
+\(M_n(\mathbb{R})\) or \(M_n(\mathbb{C})\), matrix rings (\(n \times n\) with
+entries in \(\mathbb{R}\) or \(\mathbb{C}\))
+\item Naturual example of a ring without \(1\)
+\(R = \{F : \mathbb{R} \to \mathbb{R}\}\), such that \(\displaystyle \int_{-\infty}^{+\infty} |f|\,dx < \infty\)
+with usual addition of functions and usual multiplication. But natural
+choice for \(1\) would be the constant function \(1\) but \(1 \notin \mathbb{R}\)
+\end{itemize}
+\end{enumerate}
+\end{document}
