@@ -1,0 +1,149 @@
+% Created 2022-03-02 Wed 14:23
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Fanping}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Fanping},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.5.1)},
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{LN 18}
+\label{sec:org1e5cb7a}
+Groups. \(M\) a math structure \(\implies\ Aut(M)\) - auto of \(M\)
+\subsection{Where do rings show up?}
+\label{sec:orga7996c3}
+The why of rings
+\subsubsection{Exmple: \((A, +)\) and abelian group}
+\label{sec:org0c95ee7}
+\(End(A) = \{f : F : A \to A \}\)
+\(End(A)\) has 2 natural binary operations:
+\begin{itemize}
+\item \(+\)
+\(f, g \in\ End(A)\) TODO
+\item \(*\)
+\(f, g \in\ End(A)\) then \(f \cdot g\ := f \circ g\)
+This is still a homomorphism. \((End(A), \cdot)\) is associative and \(id_A\)
+is the identity.
+\item Check distributivity!
+\((End(A), +, \cdot)\) is a ring.
+\end{itemize}
+
+\subsubsection{Example: What is we look at \(End(\mathbb{Z}, +)\)?}
+\label{sec:org4de7b1a}
+All \(f : \mathbb{Z} \to \mathbb{Z}\) and determined by where \(1\) goes.
+Say \(f(1) = n\) and \(g(1) = m\), what is \(g(f(1))\)?
+
+So \(End(\mathbb{Z}, +) = (\mathbb{Z}, + \cdot)\).
+
+\subsubsection{Example: \(V = \mathbb{C}^n\)}
+\label{sec:org1731a31}
+\(V\) is complex n-space and look \(\mathbb{R}\), the set of all linear
+tranformations \(F: V \to V\)
+\begin{itemize}
+\item \(+\) on \(\mathbb{R}\)
+\(f, g : V \to V\) on linear transformations, so is \(f + g\)
+\item \(\cdot\) on \(\mathbb{R}\)
+is just composition \(f \cdot g = f \circ g\).
+\end{itemize}
+
+Check that \((R, +, \cdot)\) is a ring with 1 - \(1 = id_V\)
+
+This is \(M_n(\mathbb{C})\) - \(n \times n\) complex matrices.
+
+\subsubsection{Subring}
+\label{sec:org5233038}
+If \(R\) is a ring and \(S \subseteq R\), then we say \(S\) is a subring of \(R\)
+if \(S\) with \(+\) and \(\cdot\) from \(R\) restricted to S is a ring
+
+\begin{itemize}
+\item Example \((\mathbb{Z}, +, \cdot)\)
+Then $n\mathbb{Z} = \{nm : m \in \mathbb{Z}\} \subseteq \mathbb{Z}$is a subring
+but noice if \(n \neq \pm 1\) then \(n\mathbb{Z}\) does not have a 1.
+\end{itemize}
+
+If \(R\), \(S\) TODO
+
+\subsubsection{Ring homomorphism}
+\label{sec:orgaa1a9af}
+If \$\(\phi\) : R \(\to\) S\$is a ring homomorphism then \(ker(\phi) = \{a \in R : \phi(a) = 0\}\)
+
+Fact: \$ker(R)\$is closed under \(+\)
+and if \(a \in\ ker(\phi),\ r \in R\) then \(ar, ra \in\ ker(\phi)\)
+
+\subsection{Ideals}
+\label{sec:orgdfd29eb}
+If \(R\) is a ring and \(I \subseteq R\) then \(I\) is an ideal
+if \((I, +)\) is an abelian group and \(\forall a \in I, r \in R, ar, ra \in I\)
+
+Notice TODO
+
+\begin{itemize}
+\item Example: What are ideals of \((\mathbb{Z}, +, \cdot)\)?
+\(\{0\}\), \(p\mathbb{Z}\),
+\(n\mathbb{Z}\ \forall n \in \mathbb{Z}\) (this is general ideal in $\mathbb{Z}$)
+\end{itemize}
+
+\subsubsection{Why do we care about ideals?}
+\label{sec:org61f8ffd}
+We want to make sense of quotients!
+
+Given \(BI \subseteq R\), \(R\) some ring and \(I\) an ideal. we want to define \(\cfrac{R}{I}\) is a ring.
+
+TODO
+
+
+\subsubsection{How do we define \((r + I)(s + I)\) for \(r, s \in R\)?}
+\label{sec:orgb211b2d}
+Define \((r + I)(s + I) = rs + I\). we need to se that this is well-defined.
+If \(r + I = r' + I\), ie \(r - r' \in I\) then \((r - r')s \in I\) because I is an ideal.
+\(\because I\)  is an ideal, so \(rs + I = r's + I\).
+
+We do something similar for \(s\) so  multiplication is well-defined.
+
+\begin{itemize}
+\item Check: $\cfrac{R}{I}$is a ring with these operations.
+\begin{itemize}
+\item Example \(\mathbb{Z}\) has \(n\mathbb{Z}\) as ideals for \(n \in \mathbb{Z}\)
+What is \(\cfrac{\mathbb{Z}}{n\mathbb{Z}}\) as a ring ?
+
+This is arithmatic mod \(n\).
+
+\textbf{1st Isomorphism Theorem}: If \(\phi: R \to S\) is a ring homomorphism
+then \(\cfrac{R}{ker(\phi)} \cong Im(\phi) \subseteq S\).
+
+Notice: Every ideal is th kernel of some ring homomorphisms.
+\(\phi: R \to \cfrac{R}{I}, i \mapsto r + I\), then \(ker(\phi) = I\).
+\end{itemize}
+\end{itemize}
+
+TODO: hard to draw the diagram
+Rings \(\to +, \cdot\), satisfying \ldots{}
+Rings with identity                                   Rings without identity.
+Commutative                         Non-commutative
+Integral domain                              Division ring (multi-inverse of non-zero elements
+(No 0 divisors                               but not nes. commutative)
+ie if \(ab= 0\) then \(a = 0\) or \(b = 0\))
+Fields: division ring and integral domain
+(every non-zero elements has a multiplicative inverse)
+
+Judson, pg 192 quaternions TODO
+\end{document}
