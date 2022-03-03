@@ -1,0 +1,197 @@
+% Created 2022-03-03 Thu 15:11
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\cf}[2]{\ensuremath{\cfrac{#1}{#2}}}
+\newcommand{\la}{\ensuremath{\langle}}
+\newcommand{\ra}{\ensuremath{\rangle}}
+\newcommand{\Ra}{\ensuremath{\Rightarrow}}
+\newcommand{\La}{\ensuremath{\Leftarrow}}
+\newcommand{\bse}{\ensuremath{\subseteq}}
+\newcommand{\pse}{\ensuremath{\supseteq}}
+\newcommand{\bs}{\ensuremath{\subset}}
+\newcommand{\ps}{\ensuremath{\supset}}
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
+\author{Fanping}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Fanping},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.5.1)},
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\setcounter{secnumdepth}{-1}
+\section{LN 19}
+\label{sec:org979f7b4}
+\subsection{Prime Ideal}
+\label{sec:org942a1d9}
+\begin{itemize}
+\item Definition: Prime Ideal
+An ideal \(I \subseteq R\), \(R\) is a ring is called prime
+if whenever \(a, b \in I\) then \(a \in I\) or \(b \in I \,\forall a, b \in R\).
+
+\item Proposition
+For a commutative ring \(R\), \(I \subseteq R\) is a prime ideal iff \(\cfrac{R}{I}\)
+is an integral domain (no-zero divisors)
+\begin{itemize}
+\item Proof
+\begin{itemize}
+\item \(\Rightarrow\)
+\end{itemize}
+Suppose that \((a + I) (b + I) = 0\) ie \(ab \in I\) but \(I\) is prime
+So \(a \in I\) or \(b \in I\) which means \(a + I = 0\) or \(b + I = 0\).
+
+\begin{itemize}
+\item \(\Leftarrow\) if \(ab \in I\) then \((a + I)(b + I) = 0\) in $\cfrac{R}{I}$
+\end{itemize}
+TODO\textsubscript{sc1}
+\end{itemize}
+
+\item Example
+\(\mathbb{Z}\) as a ring - it has ideals \(n\mathbb{Z}\) for \(n \in \mathbb{Z}\)
+which ones are prime?
+
+\(p\mathbb{Z}\) for \(p\) a prime are the prime ideals.
+
+What is \(\cfrac{\mathbb{Z}}{p\mathbb{Z}}\)?
+By the ``Proposition'', this is an integral domain. This is a field!
+
+\item Fact
+Any finite itegral domain is a field.
+\begin{itemize}
+\item Proof (By ``Pigeon Hole Principle'')
+Suppose that \(R\) is a finite integral domain and \(a \in R, a \neq 0\).
+We need to find \(b\) such that \(ab = 1\).
+
+\begin{itemize}
+\item Define: \(F : R \to R, r \mapsto ar\).
+\item Claim: \(F\) is a \(1-1\).
+
+Suppose \(ar = as\) for some \(r, s \in R\) then \(a(r - s) = 0\)
+
+But \(R\) is an integral domain. So either \(a = 0\) or \$r - s = \$.
+
+But \(a \neq 0\) so \(r = s\)
+
+\(R\) is finite so \(F\) is onto!
+\end{itemize}
+
+So for some \(B \in R, ab = 1\).
+
+So \(R\) is a field!
+\end{itemize}
+\end{itemize}
+\subsection{Maximal Ideal}
+\label{sec:orgf60c60c}
+\begin{itemize}
+\item Definition: Maximal ideal
+We call an ideal \(I \subseteq R\) maximal if \(I \neq R\) but if \(I \subseteq J \subseteq R\),
+J is an ideal, then \(I = J\) or \(J = R\)
+
+\item Proposition:
+For a commutative ring with \(1\), \(I\) is maximal iff \(\cfrac{R}{I}\) is a field.
+\begin{itemize}
+\item Proof
+\begin{itemize}
+\item \(\La\)
+The only ideals in a field \(F\) are \(F\) and \(\{0\}\).
+Because non-zero elements have multi-inverse
+TODO
+If a TODO
+
+\item \(\Ra\)
+Suppose that \(a + I \neq 0\) ie \(a \notin I\) (\(I\) is maximal).
+Genereate the smallest ideal containing \(a\) and \(I\).
+
+\(\la a , I\ra = \{ ra + rb: r \in R, b \in I \} \subset I\).
+
+So \(R = \la a , I\ra\) so \(1 = ra + rb\) for some \(r \in R, b \in I\)
+
+This means \((r + I)(a + I) = 1 + I\) in \(\cfrac{R}{I}\)
+
+Si \(a + I\) has multiplicative inverse and \(\cfrac{R}{I}\) is a field.
+\end{itemize}
+\end{itemize}
+
+\item Carollary:
+If \(R\) is a commutative ring with \(1\) then any maximal ideal is prime
+\begin{itemize}
+\item Proof
+If \(I\) is maximal then \(\cf{R}{I}\) is a field hense an integral domain
+
+So \(I\) is prime.
+\end{itemize}
+
+\item Example
+\(\cf{\ZZ}{p\ZZ}\) is both a field and an integral domain for \(p\) a prime
+so \(p\ZZ\) is both prime and maximal in \(\ZZ\).
+\end{itemize}
+\subsection{PID: principlae ideal domain}
+\label{sec:orgf5c546c}
+Notice in \(\ZZ\), every idael is 1-generated - of the form \(\la n \ra\) where \(n \in \ZZ\).
+$n =$ the smallest ideal TODO n, ie \(n\ZZ\).
+
+\begin{itemize}
+\item Definition: PID
+\end{itemize}
+A integral domain \(M\) where all dieals are 1-generated is called a principle ideal domain. (PID).
+
+TODO
+\begin{itemize}
+\item Example
+TODO
+\item Division algorithm
+If \(f, g \in F[x]\) then there are unique \(q,r \in F[x]\) such that
+\(g = fq + r\) with \(degree(r) < degree(f)\).
+
+\begin{itemize}
+\item Long division algorithm
+\(f = a_nx^n + ... + a_0\)
+\(b = b_nx^m + ... + b_0\)
+
+TODO\textsubscript{sc3}
+
+\item Ideals in \(F[x]\)
+Suppose \(I \bse F[x], I \neq \{0\}\)
+
+What does \(I\) look like?
+
+\(I = \la f\ra\) the ideal generated by \(f\).
+
+where \(f\) has the least degree among elements of \(I\).
+
+\begin{itemize}
+\item Why?
+Suppose \(g \in I\).
+Use the division algorithm to divide \(g\) by \(f\), ie $g = fq + r $
+with \(degree(r) < degree(f)\)
+
+But notice \(g \in I, fq \in I\) so \(r\) must be in \(I\).
+So \(r = 0\)
+
+Which means, \(g = fq\). So \(g \in \la f\ra\)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+
+\end{document}
